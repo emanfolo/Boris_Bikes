@@ -1,0 +1,17 @@
+objects      |   Messages   
+person
+bike         |   see if the bike is working
+docking station   |   release a bike
+
+person -> ask docking station to release a bike -> docking station
+|
+↓
+person send messages to bike to check is working.  
+
+bike 
+
+
+
+
+
+
