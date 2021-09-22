@@ -1,10 +1,10 @@
 require "bike"
 
 class DockingStation
-    attr_reader :counter  
+    attr_reader :bikes  
 
     def initialize
-      @counter = 0
+      @bikes = []
     end
 
     def release_bike
@@ -13,10 +13,8 @@ class DockingStation
     end 
 
     def dock 
-      Bike.new
-    end 
-
-    def add_counter
-      @counter += 1 
+      docked_bike = Bike.new
+      @bikes << docked_bike
+      docked_bike
     end 
 end

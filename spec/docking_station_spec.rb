@@ -16,8 +16,9 @@ describe DockingStation do
         bike = Bike.new
         docking_station = DockingStation.new
         #Act
-        docking_station.add_counter
-        expect(docking_station.counter).to eq(1)
+        docking_station.dock
+        #Expect
+        expect(docking_station.bikes.length).to eq(1)
     end
     it "it should create an instance of the Bike class" do 
         bike = Bike.new
