@@ -8,7 +8,8 @@ class DockingStation
     end
 
     def release_bike
-      Bike.new
+      raise ('Docking Station empty') unless @bikes.length > 0
+      Bike.new if @bikes.length > 0
       #@counter -= 1
     end 
 
