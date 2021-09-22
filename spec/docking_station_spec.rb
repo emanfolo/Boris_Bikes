@@ -37,7 +37,8 @@ describe DockingStation do
     it "it should raise an error when we request to dock a bike at a full docking station" do 
         bike = Bike.new
         docking_station = DockingStation.new
-        20.times { docking_station.dock }
+        capacity = DockingStation::DEFAULT_CAPACITY
+        capacity.times { docking_station.dock }
         expect{ docking_station.dock }.to raise_error
     end
 end
