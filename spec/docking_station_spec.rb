@@ -40,5 +40,6 @@ describe DockingStation do
         capacity = DockingStation::DEFAULT_CAPACITY
         capacity.times { docking_station.dock }
         expect{ docking_station.dock }.to raise_error
+        # to be able to push
     end
 end
