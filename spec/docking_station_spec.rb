@@ -5,11 +5,15 @@ describe DockingStation do
      docking_station = DockingStation.new
      expect(docking_station).to respond_to(:release_bike)
     end
-    it "it should get a bike" do 
-        bike = Bike.new
+
+    it "the 'bike' you docked should work" do 
+        bike = double("bike", :is_working => true)
+        allow(bike).to receive(:working?).and_return(true)
+        expect(bike).to receive(:is_working=).with(true)
+
         docking_station = DockingStation.new
         docking_station.dock(bike)
-        expect(docking_station.release_bike).to be_a Bike 
+        #expect(docking_station.release_bike).to be_a Bike 
         expect(bike.working?).to eq(true)
     end
     it "it should add a bike to counter for our docking station" do

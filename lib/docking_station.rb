@@ -18,7 +18,9 @@ class DockingStation
     def dock(docked_bike, is_working= true)
       raise "This docking station is full" unless self.full? == false 
       docked_bike.working? ? @bikes << docked_bike : @bikes.unshift(docked_bike)
+      #elephant = true therefore @bikes << elephant
       docked_bike.is_working = is_working
+      #elephant.is_working = true
     end
 
     private 
